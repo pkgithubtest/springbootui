@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.websystique.springboot'
+version = '1.0.0'
+
+description = """SpringBootStandAloneWarExample"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'1.4.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.4.3.RELEASE'
+    compileOnly group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version:'8.5.6'
+     compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.1.0'
+    compile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version:'2.3.1'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+}
